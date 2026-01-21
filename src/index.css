@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Hero Section Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Pulse animation for badge */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Size pulse animation for WhatsApp button */
+@keyframes scale-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-scale-pulse {
+  animation: scale-pulse 1.5s ease-in-out infinite;
+}
+
+/* Random jerk/shake animation for WhatsApp button */
+@keyframes random-jerk {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.animate-random-jerk {
+  animation: random-jerk 0.8s ease-in-out infinite;
+}
+
+/* Button hover effects */
+button:hover {
+  transform: translateY(-2px);
+}
+
+button {
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Star Animation for Testimonials */
+@keyframes starFloat {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-15px) scale(1.1);
+  }
+}
+
+@keyframes starGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px currentColor);
+  }
+}
+
+.star {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: starFloat 4s ease-in-out infinite, starGlow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.star-1 {
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 20%;
+  right: 20%;
+  animation-delay: 1s;
+}
+
+.star-3 {
+  bottom: 15%;
+  left: 25%;
+  animation-delay: 0.5s;
+}
+
+.star-4 {
+  top: 5%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+.star-5 {
+  bottom: 10%;
+  right: 30%;
+  animation-delay: 0.8s;
+}
+
+.star-6 {
+  top: 50%;
+  left: 5%;
+  animation-delay: 1.2s;
+}
+
+.star-7 {
+  top: 45%;
+  right: 5%;
+  animation-delay: 1.8s;
+}
+
+.star-8 {
+  bottom: 30%;
+  left: 40%;
+  animation-delay: 1.3s;
+}
+
+.star-9 {
+  top: 25%;
+  left: 50%;
+  animation-delay: 2.2s;
+}
+
+@media (max-width: 768px) {
+  .star {
+    font-size: 1.2rem;
+  }
+  
+  /* Reposition stars to avoid text overlap on mobile */
+  .star-1 {
+    top: 5%;
+    left: 10%;
+  }
+  
+  .star-2 {
+    top: 15%;
+    right: 15%;
+  }
+  
+  .star-3 {
+    bottom: 5%;
+    left: 20%;
+  }
+  
+  .star-4 {
+    top: 3%;
+    right: 10%;
+  }
+  
+  .star-5 {
+    bottom: 3%;
+    right: 25%;
+  }
+  
+  .star-6 {
+    top: 60%;
+    left: 3%;
+  }
+  
+  /* Scale down hero background image on mobile */
+  #eligibility > div.bg-cover {
+    background-size: 180% auto !important;
+  }
+  
+  /* Add bottom padding on mobile to account for sticky offer bar */
+  body {
+    padding-bottom: 4.5rem;
+  }
+}

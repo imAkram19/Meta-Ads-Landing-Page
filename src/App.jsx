@@ -9,6 +9,7 @@ import Deliverables from './components/sections/meta-ads/Deliverables'
 import Audience from './components/sections/meta-ads/Audience'
 import Authority from './components/sections/meta-ads/Authority'
 import Pricing from './components/sections/meta-ads/Pricing'
+import ExclusiveBonuses from './components/sections/meta-ads/ExclusiveBonuses'
 import FAQ from './components/sections/meta-ads/FAQ'
 import FinalCTA from './components/sections/meta-ads/FinalCTA'
 import Footer from './components/sections/Footer'
@@ -73,6 +74,9 @@ function App() {
         {/* Solution Section */}
         <Solution />
 
+        {/* Exclusive Bonuses Section */}
+        <ExclusiveBonuses />
+
         {/* Core Learning Section */}
         <Curriculum />
 
@@ -87,6 +91,8 @@ function App() {
 
         {/* Pricing Section */}
         <Pricing />
+
+
 
         {/* FAQ Section */}
         <FAQ />

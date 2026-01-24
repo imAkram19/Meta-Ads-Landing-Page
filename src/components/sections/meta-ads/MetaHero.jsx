@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { Zap, CheckCircle2 } from 'lucide-react'
 
 const MetaHero = () => {
     return (
@@ -32,39 +34,61 @@ const MetaHero = () => {
                         <span className="text-gray-300 text-sm font-medium">Updated for 2026</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[1.1]">
-                        Meta Ads <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Starter Guide</span>
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-tight">
+                        Meta Ads <br className="block md:hidden" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Starter Guide - 2026</span>
                     </h1>
 
-                    <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                        Learn How to Run Facebook & Instagram Ads.<br />
-                        <span className="text-white font-medium">Step-by-Step — No Experience Needed.</span>
-                    </p>
-                </div>
-
-                {/* Subhead / Pain Points */}
-                <div className="max-w-3xl mx-auto bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-12 text-left">
-                    <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-3">
-                        <span className="text-blue-400">⚡</span> If you currently:
-                    </h3>
-                    <div className="space-y-3">
-                        {[
-                            "Don't understand Ads Manager",
-                            "Waste money boosting posts",
-                            "Feel Meta Ads is 'too complicated'"
-                        ].map((item, i) => (
-                            <div key={i} className="flex items-center gap-3 text-gray-300">
-                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                                {item}
-                            </div>
-                        ))}
-                    </div>
-                    <div className="mt-6 pt-6 border-t border-white/10">
-                        <p className="text-lg text-blue-200 font-medium flex items-center gap-2">
-                            👉 This guide is made for you.
+                    <div className="flex flex-col items-center justify-center gap-2">
+                        <p className="text-base sm:text-xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200 max-w-2xl mx-auto leading-relaxed">
+                            Learn How to Run Facebook & Instagram Ads.
                         </p>
                     </div>
                 </div>
+
+                {/* Subhead / Pain Points */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="max-w-3xl mx-auto bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10 mb-16 text-center md:text-left shadow-2xl relative overflow-hidden"
+                >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[50px] rounded-full pointer-events-none" />
+
+                    <h3 className="text-xl md:text-2xl font-semibold text-white mb-8 flex items-center justify-center md:justify-start gap-3">
+                        <Zap className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+                        <span>If You Currently</span>
+                    </h3>
+
+                    <div className="flex flex-col gap-4">
+                        {[
+                            { text: "Don't understand Ads Manager", color: "from-red-500/20" },
+                            { text: "Waste money boosting posts", color: "from-orange-500/20" },
+                            { text: "Feel Meta Ads is 'too complicated'", color: "from-purple-500/20" }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 + 0.3 }}
+                                className="flex items-center justify-center md:justify-start gap-4 text-gray-200 bg-white/5 p-4 rounded-xl border border-white/5 hover:border-white/20 transition-all hover:bg-white/10"
+                            >
+                                <div className="min-w-[24px]">
+                                    <CheckCircle2 className="w-6 h-6 text-blue-400" />
+                                </div>
+                                <span className="text-base md:text-lg">{item.text}</span>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-white/10 text-center">
+                        <p className="text-xl md:text-2xl text-blue-200 font-bold flex flex-col md:flex-row items-center justify-center gap-2">
+                            <span>👉</span>
+                            <span className="bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">This guide is made for you.</span>
+                        </p>
+                    </div>
+                </motion.div>
 
                 {/* Video Placeholder */}
                 <div className="w-full max-w-2xl mx-auto aspect-video bg-black/80 rounded-xl border border-white/10 mb-12 flex flex-col items-center justify-center relative shadow-2xl overflow-hidden group">

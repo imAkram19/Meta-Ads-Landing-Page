@@ -1,7 +1,15 @@
 import React from 'react'
-import { Star, ShieldCheck } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Star, ShieldCheck, Target, CheckCircle2 } from 'lucide-react'
 
 const Authority = () => {
+    const reasons = [
+        "I work with Meta Ads professionally every day.",
+        "I understand beginner problems clearly.",
+        "I’ve seen what works and what fails.",
+        "This guide is built from real experience."
+    ]
+
     const testimonials = [
         { name: "Mohammed Shoaib", role: "Small Business Owner", text: "I was wasting money on 'Boost Post'. This guide showed me how to use Ads Manager properly. Finally getting qualified leads.", rating: 5 },
         { name: "Rajesh Reddy", role: "Freelancer", text: "Simple, direct, and no nonsense. The campaign structure part alone is worth more than updated ₹399.", rating: 5 },
@@ -13,51 +21,91 @@ const Authority = () => {
     ]
 
     return (
-        <section className="py-24 relative">
+        <section className="pt-4 md:pt-16 pb-12 md:pb-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Author / Trust Section */}
-                <div className="max-w-4xl mx-auto text-center mb-20">
-                    <span className="inline-block p-3 rounded-full bg-blue-500/10 text-blue-400 mb-6">
-                        <ShieldCheck size={32} />
-                    </span>
-                    <h2 className="text-4xl font-bold text-white mb-8">👨‍💻 Why Learn From Me?</h2>
+                <div className="max-w-4xl mx-auto mb-16 px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="flex items-center justify-center gap-3 mb-8 text-center"
+                    >
+                        <div className="p-2 rounded-full bg-blue-500/10 text-blue-400 shrink-0">
+                            <ShieldCheck size={28} className="md:w-10 md:h-10" />
+                        </div>
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white whitespace-nowrap">Why Learn From Me?</h2>
+                    </motion.div>
 
-                    <div className="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
-                        <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                            <p className="text-gray-300">✅ I work with Meta Ads professionally every day.</p>
-                        </div>
-                        <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                            <p className="text-gray-300">✅ I understand beginner problems clearly.</p>
-                        </div>
-                        <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                            <p className="text-gray-300">✅ I’ve seen what works and what fails.</p>
-                        </div>
-                        <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                            <p className="text-gray-300">✅ This guide is built from real experience.</p>
-                        </div>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="bg-white/5 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl relative max-w-2xl mx-auto group"
+                    >
+                        {/* Top Highlight Border */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
 
-                    <p className="text-xl text-gray-400 mt-10 italic">
-                        "This is the guide I wish I had when I started."
-                    </p>
+                        <div className="grid grid-cols-1 gap-4 md:gap-5 text-left">
+                            {reasons.map((text, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2 + (i * 0.1) }}
+                                    className="flex items-start gap-3"
+                                >
+                                    <CheckCircle2 size={18} className="text-blue-400 shrink-0 mt-1 md:w-6 md:h-6" />
+                                    <p className="text-gray-200 text-base md:text-xl font-medium">{text}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        <div className="mt-6 pt-6 md:mt-8 md:pt-8 border-t border-white/10 text-center">
+                            <p className="text-base md:text-xl text-blue-300 italic font-medium">
+                                "This is the guide I wish I had when I started."
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
 
                 {/* Testimonials */}
                 <div className="text-center mb-12">
-                    <h3 className="text-2xl font-bold text-white mb-2">What Others Are Saying</h3>
-                    <div className="flex justify-center gap-1 text-yellow-400 mb-2">
+                    <motion.h3
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-3xl md:text-4xl font-bold text-white mb-4"
+                    >
+                        Testimonials
+                    </motion.h3>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="flex justify-center gap-1 text-yellow-400 mb-2"
+                    >
                         <Star fill="currentColor" size={20} />
                         <Star fill="currentColor" size={20} />
                         <Star fill="currentColor" size={20} />
                         <Star fill="currentColor" size={20} />
                         <Star fill="currentColor" size={20} />
-                    </div>
-                    <p className="text-gray-500">Based on recent feedback from Hyderabad & India</p>
+                    </motion.div>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {testimonials.map((t, i) => (
-                        <div key={i} className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors"
+                        >
                             <div className="flex gap-1 text-yellow-500 mb-4">
                                 {Array(t.rating).fill(0).map((_, k) => (
                                     <Star key={k} fill="currentColor" size={16} />
@@ -73,11 +121,11 @@ const Authority = () => {
                                     <p className="text-gray-500 text-xs">{t.role}</p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     )
 }
 

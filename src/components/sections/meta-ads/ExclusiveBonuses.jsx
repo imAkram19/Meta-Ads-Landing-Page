@@ -2,6 +2,49 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Gift, CheckCircle2, ArrowRight } from 'lucide-react'
 
+const AnimatedPrice = ({ worth }) => {
+    return (
+        <div className="flex items-center justify-end min-h-[40px] py-1 px-1 overflow-hidden">
+            <div className="relative inline-flex items-center">
+                <motion.div
+                    initial={{ x: 50, opacity: 1 }}
+                    whileInView={{ x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1.8, duration: 0.6, ease: "anticipate" }}
+                    className="relative"
+                >
+                    <motion.span
+                        initial={{ color: "#ffffff" }}
+                        whileInView={{ color: "#9ca3af" }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 1.4, duration: 0.4 }}
+                        className="text-sm font-medium relative z-0"
+                    >
+                        {worth}
+                    </motion.span>
+                    {/* Thin Strike-through line */}
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "115%" }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 1.0, duration: 0.5, ease: "easeOut" }}
+                        className="absolute top-[55%] left-[-7.5%] h-[1.5px] bg-red-500 rounded-full z-20"
+                    />
+                </motion.div>
+                <motion.span
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1.8, duration: 0.6 }}
+                    className="text-lg font-bold text-green-400 ml-3"
+                >
+                    FREE
+                </motion.span>
+            </div>
+        </div>
+    );
+};
+
 const ExclusiveBonuses = () => {
     const bonuses = [
         {
@@ -42,30 +85,52 @@ const ExclusiveBonuses = () => {
     ]
 
     return (
-        <section className="py-24 relative">
+        <section className="pt-12 md:pt-24 pb-8 md:pb-16 relative overflow-hidden">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="text-center mb-16">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 font-medium text-sm"
+                        animate={{
+                            scale: [1, 1.05, 1],
+                            borderColor: ["rgba(59, 130, 246, 0.3)", "rgba(59, 130, 246, 0.6)", "rgba(59, 130, 246, 0.3)"]
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 font-medium text-sm shadow-[0_0_15px_rgba(59,130,246,0.2)]"
                     >
                         🎁 Exclusive Bonuses (Limited Time)
                     </motion.div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-3xl md:text-5xl font-bold text-white mb-6"
+                    >
                         What You Get For <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">FREE</span>
-                    </h2>
+                    </motion.h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                     {bonuses.map((bonus, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            initial={{
+                                opacity: 0,
+                                y: 30,
+                                scale: 0.95
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                y: 0,
+                                scale: 1
+                            }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.15
+                            }}
                             className={`relative bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 transition-all group overflow-hidden ${index === 4 ? 'md:col-span-2' : ''}`}
                         >
                             <div className="absolute top-0 right-0 px-4 py-1 bg-yellow-500/20 text-yellow-300 text-xs font-bold uppercase tracking-wider rounded-bl-xl border-l border-b border-yellow-500/20">
@@ -86,18 +151,13 @@ const ExclusiveBonuses = () => {
                                     </div>
                                     <div className="text-right">
                                         <span className="text-xs text-gray-500 uppercase tracking-wider block">Worth</span>
-                                        <div className="flex items-center gap-2 justify-end">
-                                            <span className="text-sm text-gray-500 line-through">{bonus.worth}</span>
-                                            <span className="text-lg font-bold text-green-400">FREE</span>
-                                        </div>
+                                        <AnimatedPrice worth={bonus.worth} />
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
-
-
             </div>
         </section>
     )

@@ -63,10 +63,10 @@ function StickyOfferBar() {
   }, []);
 
   useEffect(() => {
-    // Show the sticky bar after 2 seconds
+    // Show the sticky bar after 1.5 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -77,12 +77,12 @@ function StickyOfferBar() {
       const animationTimer = setTimeout(() => {
         setShouldAnimate(true);
       }, 50);
-      
+
       // Start pulsing after 2 seconds
       const pulseTimer = setTimeout(() => {
         setShouldPulse(true);
       }, 2500);
-      
+
       return () => {
         clearTimeout(animationTimer);
         clearTimeout(pulseTimer);
@@ -112,101 +112,101 @@ function StickyOfferBar() {
 
   return (
     <>
-      {/* Mobile Version */}
-      <div className={`fixed bottom-4 left-4 right-4 z-[100] md:hidden backdrop-blur-md bg-white/10 border border-white/20 shadow-2xl rounded-2xl transition-all duration-700 ease-out ${!isVisible ? 'translate-y-full opacity-0' : shouldAnimate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'} ${shouldPulse ? 'animate-scale-pulse' : ''}`}>
-        <div className="flex items-center justify-between px-4 py-3 gap-2">
-          {/* Timer Text */}
+      <div className={`fixed bottom-4 left-4 right-4 z-[100] md:hidden backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-2xl transition-all duration-700 ease-out ${!isVisible ? 'translate-y-[200%] opacity-0' : shouldAnimate ? 'translate-y-0 opacity-100' : 'translate-y-[200%] opacity-0'} ${shouldPulse ? 'animate-scale-pulse' : ''}`}>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl pointer-events-none" />
+        <div className="flex items-center justify-between px-4 py-3 gap-2 relative z-10">
           <div className="flex flex-col flex-1">
             {!timerEnded ? (
               <>
-                <span className="text-[10px] font-semibold text-white/70">
-                  Limited Offer Ends In :
+                <span className="text-[10px] uppercase tracking-wider font-bold text-white/50">
+                  Limited Offer Ends In:
                 </span>
-                <div className="flex items-center gap-1.5 text-lg">
-                  <span className="text-white/40 line-through font-semibold">₹999/-</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 font-bold">₹0/-</span>
-                  <span className="text-red-500/70 text-xl font-bold ml-2">{timeLeft}</span>
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center bg-red-500/20 px-2 py-0.5 rounded border border-red-500/30">
+                    <span className="text-red-500 text-sm font-mono font-bold">{timeLeft}</span>
+                  </div>
+                  <span className="text-white/30 line-through font-semibold text-xs ml-4">₹8,999</span>
+                  <span className="text-2xl font-black text-white italic">₹399/-</span>
                 </div>
               </>
             ) : (
               <>
-                <span className="text-[10px] font-semibold text-white/70">Limited Offer Ends In :</span>
+                <span className="text-[10px] font-semibold text-white/70">Offer Expired</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold text-white">₹999/-</span>
+                  <span className="text-2xl font-bold text-white">₹8,999/-</span>
                 </div>
               </>
             )}
           </div>
 
-          {/* WhatsApp Button */}
           <Button
             size="sm"
-            className={`bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold px-3 py-2 text-xs whitespace-nowrap shadow-lg ${shouldJerk ? 'animate-random-jerk' : ''}`}
+            className={`bg-[#ff4d4d] hover:bg-[#ff3333] text-white font-bold px-4 py-2 text-xs uppercase tracking-tighter whitespace-nowrap shadow-lg shadow-red-500/20 border-b-2 border-red-700 active:border-b-0 active:translate-y-[1px] transition-all ${shouldJerk ? 'animate-random-jerk' : ''}`}
             asChild
           >
-            <a 
-              href="https://wa.me/919059053439?text=Hi!%20I%20saw%20the%20limited%20offer%20and%20I%27m%20interested%20in%20getting%20started." 
-              target="_blank" 
+            <a
+              href="https://wa.me/919059053439?text=Hi!%20I%20want%20to%20Buy%20Now%20at%20the%20discounted%20price%20of%20₹399."
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5"
               onClick={() => {
                 if (typeof fbq !== 'undefined') {
-                  fbq('track', 'Lead');
+                  fbq('track', 'InitiateCheckout');
                 }
               }}
             >
-              <span>💬</span>
-              <span>Chat on WhatsApp</span>
+              <span>Buy Now</span>
             </a>
           </Button>
         </div>
       </div>
 
       {/* Desktop Version */}
-      <div className={`md:flex hidden fixed bottom-4 right-4 z-[100] backdrop-blur-md bg-white/10 border border-white/20 shadow-2xl rounded-2xl transition-all duration-700 ease-out ${!isVisible ? 'translate-y-full opacity-0' : shouldAnimate ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'} ${shouldPulse ? 'animate-scale-pulse' : ''}`}>
-        <div className="flex items-center justify-between px-6 py-4 gap-4">
-          {/* Timer Text */}
+      <div className={`md:flex hidden fixed bottom-6 right-6 z-[100] w-[450px] backdrop-blur-2xl bg-white/5 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] rounded-3xl transition-all duration-700 ease-out ${!isVisible ? 'translate-x-[120%] opacity-0' : shouldAnimate ? 'translate-x-0 opacity-100' : 'translate-x-[120%] opacity-0'} ${shouldPulse ? 'animate-scale-pulse' : ''}`}>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/15 to-transparent rounded-3xl pointer-events-none" />
+        <div className="flex items-center justify-between px-6 py-4 gap-6 relative z-10 w-full">
           <div className="flex flex-col">
             {!timerEnded ? (
               <>
-                <span className="text-xs font-semibold text-white/70">
-                  Limited Offer Ends In :
+                <span className="text-[10px] uppercase tracking-widest font-bold text-white/50 mb-1">
+                  Flash Sale Ends In:
                 </span>
-                <div className="flex items-center gap-2 text-2xl">
-                  <span className="text-white/40 line-through font-semibold">₹999/-</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 font-bold">₹0/-</span>
-                  <span className="text-red-500/70 text-3xl font-bold ml-2">{timeLeft}</span>
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center bg-red-500/20 px-3 py-1 rounded-lg border border-red-500/30">
+                    <span className="text-red-500 text-2xl font-mono font-black">{timeLeft}</span>
+                  </div>
+                  <span className="text-white/20 line-through font-bold text-lg ml-6">₹8,999</span>
+                  <span className="text-4xl font-black text-white italic tracking-tighter">₹399/-</span>
                 </div>
               </>
             ) : (
               <>
-                <span className="text-xs font-semibold text-white/70">Limited Offer Ends In :</span>
+                <span className="text-xs font-semibold text-white/70">Offer Expired</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold text-white">₹999/-</span>
+                  <span className="text-3xl font-bold text-white">₹8,999/-</span>
                 </div>
               </>
             )}
           </div>
 
-          {/* WhatsApp Button */}
           <Button
-            size="sm"
-            className={`bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold px-4 py-2.5 text-xs whitespace-nowrap shadow-lg ${shouldJerk ? 'animate-random-jerk' : ''}`}
+            size="lg"
+            className={`bg-[#ff4d4d] hover:bg-[#ff3333] text-white font-black px-8 py-6 text-lg uppercase italic tracking-tighter whitespace-nowrap shadow-2xl shadow-red-500/40 border-b-4 border-red-700 active:border-b-0 active:translate-y-[2px] transition-all group ${shouldJerk ? 'animate-random-jerk' : ''}`}
             asChild
           >
-            <a 
-              href="https://wa.me/919059053439?text=Hi!%20I%20saw%20the%20limited%20offer%20and%20I%27m%20interested%20in%20getting%20started." 
-              target="_blank" 
+            <a
+              href="https://wa.me/919059053439?text=Hi!%20I%20want%20to%20Buy%20Now%20at%20the%20discounted%20price%20of%20₹399."
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
               onClick={() => {
                 if (typeof fbq !== 'undefined') {
-                  fbq('track', 'Lead');
+                  fbq('track', 'InitiateCheckout');
                 }
               }}
             >
-              <span>💬</span>
-              <span>Chat on WhatsApp</span>
+              <span>Buy Now</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </Button>
         </div>

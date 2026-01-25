@@ -83,16 +83,8 @@ function App() {
         {/* Authority Section */}
         <Authority />
 
-        {/* Pricing Section */}
-        <Pricing />
-
-
-
         {/* FAQ Section */}
         <FAQ />
-
-        {/* Final CTA Section */}
-        <FinalCTA />
 
         {/* Footer */}
         <Footer />
@@ -100,7 +92,7 @@ function App() {
       </div>
 
       {/* Sticky Offer Bar - Mobile Only */}
-      {/* <StickyOfferBar /> */}
+      <StickyOfferBar />
       <Analytics />
       <SpeedInsights />
     </div>

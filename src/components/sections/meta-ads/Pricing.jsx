@@ -2,11 +2,10 @@ import React from 'react'
 
 const Pricing = () => {
     return (
-        <section className="py-24 bg-gradient-to-b from-blue-900/10 to-black relative overflow-hidden" id="pricing">
+        <section className="py-24 relative overflow-hidden" id="pricing">
             <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
                 <div className="bg-gradient-to-br from-gray-900 to-black border border-blue-500/30 p-8 md:p-12 rounded-3xl shadow-2xl relative">
-                    {/* Floating Glow */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.6)]" />
+
 
                     <h2 className="text-3xl font-bold text-white mb-8">Start Learning Today</h2>
 

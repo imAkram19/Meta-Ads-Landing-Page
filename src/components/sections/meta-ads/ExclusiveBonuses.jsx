@@ -42,7 +42,7 @@ const ExclusiveBonuses = () => {
     ]
 
     return (
-        <section className="py-24 relative bg-slate-950/50">
+        <section className="py-24 relative">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="text-center mb-16">
                     <motion.div

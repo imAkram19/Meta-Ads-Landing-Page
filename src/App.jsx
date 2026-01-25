@@ -41,13 +41,7 @@ function App() {
     <div className="w-full relative bg-black text-white">
       <div className="fixed inset-0 w-full pointer-events-none z-[5] overflow-hidden">
         <div ref={backgroundRef} className="absolute inset-0 w-full h-[400vh]">
-          {/* Blue Glow Background at Top */}
-          <div
-            className="absolute inset-0 z-0"
-            style={{
-              background: "radial-gradient(ellipse 80% 20% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
-            }}
-          />
+
 
           {/* Animated Squares Background */}
           <div className="absolute inset-0 z-[5]">

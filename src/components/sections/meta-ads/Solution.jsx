@@ -5,11 +5,11 @@ const Solution = () => {
     return (
         <section className="py-24 relative overflow-hidden">
             {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/20 to-black pointer-events-none" />
+            {/* Background Gradient */}
+            {/* <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/20 to-black pointer-events-none" /> */}
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
-                    <span className="text-green-500 font-bold tracking-wider text-sm uppercase mb-2 block">The Solution</span>
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                         ✅ This Guide Solves That
                     </h2>
@@ -18,10 +18,7 @@ const Solution = () => {
                 <div className="bg-white/5 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/10 max-w-4xl mx-auto shadow-2xl">
                     <div className="text-center mb-10">
                         <p className="text-2xl text-white font-medium mb-4">
-                            This is <span className="text-red-400 font-bold">NOT</span> a random course.
-                        </p>
-                        <p className="text-gray-300 text-lg">
-                            This is a simple beginner guide that shows you exactly:
+                            This is NOT a random course.
                         </p>
                     </div>
 

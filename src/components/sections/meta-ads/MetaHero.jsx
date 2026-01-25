@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Zap, CheckCircle2 } from 'lucide-react'
 import heroPerson from '../../../assets/hero-person.png'
+import courseVideo from '../../../assets/web video.mp4'
 
 const MetaHero = () => {
     return (
@@ -175,13 +176,19 @@ const MetaHero = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* Video Placeholder */}
-                <div className="w-full max-w-2xl mx-auto aspect-video bg-black/80 rounded-xl border border-white/10 mb-0 md:mb-12 flex flex-col items-center justify-center relative shadow-2xl overflow-hidden group">
-                    {/* Play Button Visual */}
-                    <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform duration-300">
-                        <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent ml-1" />
+                {/* Course Video */}
+                <div className="w-full max-w-[500px] mx-auto mb-0 md:mb-12 relative shadow-2xl overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+                    <div className="aspect-[1080/1350] w-full relative">
+                        <video
+                            src={courseVideo}
+                            controls
+                            playsInline
+                            className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+                            poster={heroPerson} // Using heroPerson as a temporary poster if needed, or omit
+                        >
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
-                    <p className="text-white/40 mt-4 font-medium">Video Explanation Placeholder</p>
                 </div>
             </div>
         </section>

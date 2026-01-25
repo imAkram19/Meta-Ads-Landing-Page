@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 
 const FinalCTA = () => {
@@ -21,12 +22,14 @@ const FinalCTA = () => {
                     <p className="text-white font-medium">Start learning Meta Ads step by step.</p>
                 </div>
 
-                <button className="group relative px-10 py-5 bg-white text-black hover:bg-gray-100 rounded-full font-bold text-xl transition-all transform hover:scale-105 shadow-2xl shadow-blue-900/40">
-                    <span className="relative z-10 flex items-center gap-2">
-                        Get Meta Ads Starter Guide – 2026
-                        <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                    </span>
-                </button>
+                <Link to="/welcome">
+                    <button className="group relative px-10 py-5 bg-white text-black hover:bg-gray-100 rounded-full font-bold text-xl transition-all transform hover:scale-105 shadow-2xl shadow-blue-900/40">
+                        <span className="relative z-10 flex items-center gap-2">
+                            Get Meta Ads Starter Guide – 2026
+                            <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                        </span>
+                    </button>
+                </Link>
             </div>
         </section>
     )

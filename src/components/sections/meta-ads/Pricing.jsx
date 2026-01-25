@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Pricing = () => {
     return (
@@ -25,9 +26,11 @@ const Pricing = () => {
                         </p>
                     </div>
 
-                    <button className="w-full md:w-auto px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-bold text-xl transition-all transform hover:scale-105 shadow-xl shadow-blue-600/20 animate-pulse">
-                        Get Instant Access Now
-                    </button>
+                    <Link to="/welcome" className="block w-full md:w-auto">
+                        <button className="w-full md:w-auto px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-bold text-xl transition-all transform hover:scale-105 shadow-xl shadow-blue-600/20 animate-pulse">
+                            Get Instant Access Now
+                        </button>
+                    </Link>
 
                     <p className="text-xs text-gray-500 mt-6">
                         🔒 Secure Payment via UPI/Card • Instant Email Delivery

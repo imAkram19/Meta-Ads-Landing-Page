@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 
 function StickyOfferBar() {
@@ -147,10 +148,8 @@ function StickyOfferBar() {
             className={`bg-[#ff4d4d] hover:bg-[#ff3333] text-white font-bold px-4 py-2 text-xs uppercase tracking-tighter whitespace-nowrap shadow-lg shadow-red-500/20 border-b-2 border-red-700 active:border-b-0 active:translate-y-[1px] transition-all ${shouldJerk ? 'animate-random-jerk' : ''}`}
             asChild
           >
-            <a
-              href="https://wa.me/919059053439?text=Hi!%20I%20want%20to%20Buy%20Now%20at%20the%20discounted%20price%20of%20₹399."
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/welcome"
               className="flex items-center gap-1.5"
               onClick={() => {
                 if (typeof fbq !== 'undefined') {
@@ -159,7 +158,7 @@ function StickyOfferBar() {
               }}
             >
               <span>Buy Now</span>
-            </a>
+            </Link>
           </Button>
         </div>
       </div>
@@ -200,10 +199,8 @@ function StickyOfferBar() {
             className={`bg-[#ff4d4d] hover:bg-[#ff3333] text-white font-black px-8 py-6 text-lg uppercase italic tracking-tighter whitespace-nowrap shadow-2xl shadow-red-500/40 border-b-4 border-red-700 active:border-b-0 active:translate-y-[2px] transition-all group ${shouldJerk ? 'animate-random-jerk' : ''}`}
             asChild
           >
-            <a
-              href="https://wa.me/919059053439?text=Hi!%20I%20want%20to%20Buy%20Now%20at%20the%20discounted%20price%20of%20₹399."
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/welcome"
               className="flex items-center gap-2"
               onClick={() => {
                 if (typeof fbq !== 'undefined') {
@@ -213,7 +210,7 @@ function StickyOfferBar() {
             >
               <span>Buy Now</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </a>
+            </Link>
           </Button>
         </div>
       </div>

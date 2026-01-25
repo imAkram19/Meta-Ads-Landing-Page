@@ -9,15 +9,15 @@ const AnimatedPrice = ({ worth }) => {
                 <motion.div
                     initial={{ x: 50, opacity: 1 }}
                     whileInView={{ x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1.8, duration: 0.6, ease: "anticipate" }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: 0.8, duration: 0.6, ease: "anticipate" }}
                     className="relative"
                 >
                     <motion.span
                         initial={{ color: "#ffffff" }}
                         whileInView={{ color: "#9ca3af" }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 1.4, duration: 0.4 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ delay: 0.4, duration: 0.4 }}
                         className="text-sm font-medium relative z-0"
                     >
                         {worth}
@@ -26,16 +26,16 @@ const AnimatedPrice = ({ worth }) => {
                     <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: "115%" }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 1.0, duration: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
                         className="absolute top-[55%] left-[-7.5%] h-[1.5px] bg-red-500 rounded-full z-20"
                     />
                 </motion.div>
                 <motion.span
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1.8, duration: 0.6 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
                     className="text-lg font-bold text-green-400 ml-3"
                 >
                     FREE
@@ -108,34 +108,25 @@ const ExclusiveBonuses = () => {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6"
                     >
-                        What You Get For <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">FREE</span>
+                        What You <span className="text-blue-400">Get</span> For <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">FREE</span>
                     </motion.h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                     {bonuses.map((bonus, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{
-                                opacity: 0,
-                                y: 30,
-                                scale: 0.95
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                                scale: 1
-                            }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{
-                                duration: 0.5,
-                                delay: index * 0.15
-                            }}
                             className={`relative bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 transition-all group overflow-hidden ${index === 4 ? 'md:col-span-2' : ''}`}
                         >
-                            <div className="absolute top-0 right-0 px-4 py-1 bg-yellow-500/20 text-yellow-300 text-xs font-bold uppercase tracking-wider rounded-bl-xl border-l border-b border-yellow-500/20">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
+                                className="absolute top-0 right-0 px-4 py-1 bg-yellow-500/20 text-yellow-300 text-xs font-bold uppercase tracking-wider rounded-bl-xl border-l border-b border-yellow-500/20"
+                            >
                                 {bonus.title}
-                            </div>
+                            </motion.div>
 
                             <div className="flex flex-col h-full justify-between gap-4">
                                 <div>
@@ -144,9 +135,15 @@ const ExclusiveBonuses = () => {
                                 </div>
                                 <div className="pt-4 border-t border-white/5 flex items-center justify-between">
                                     <div className="flex items-center gap-2">
-                                        <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0 }}
+                                            whileInView={{ opacity: 1, scale: 1 }}
+                                            viewport={{ once: true }}
+                                            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.4 }}
+                                            className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center"
+                                        >
                                             <bonus.icon className="w-4 h-4 text-blue-400" />
-                                        </div>
+                                        </motion.div>
                                         <span className="text-sm text-gray-400">Instant Access</span>
                                     </div>
                                     <div className="text-right">
@@ -155,7 +152,7 @@ const ExclusiveBonuses = () => {
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

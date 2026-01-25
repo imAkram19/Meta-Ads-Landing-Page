@@ -19,7 +19,24 @@ const Audience = () => {
                             <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
                                 <Check className="text-green-500" />
                             </div>
-                            <h3 className="text-2xl font-bold text-white">This Is <span className="underline decoration-green-500 underline-offset-4">Perfect</span> For:</h3>
+                            <h3 className="text-2xl font-bold text-white">
+                                This Is <span className="relative inline-block px-1">
+                                    Perfect
+                                    <svg className="absolute -bottom-2 left-0 w-full h-2" viewBox="0 0 100 20" preserveAspectRatio="none">
+                                        <motion.path
+                                            d="M 0 10 Q 50 20 100 10"
+                                            fill="transparent"
+                                            stroke="#22c55e"
+                                            strokeWidth="6"
+                                            strokeLinecap="round"
+                                            initial={{ pathLength: 0 }}
+                                            whileInView={{ pathLength: 1 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+                                        />
+                                    </svg>
+                                </span> For:
+                            </h3>
                         </div>
                         <div className="space-y-4">
                             {[
@@ -55,7 +72,24 @@ const Audience = () => {
                             <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center">
                                 <X className="text-red-500" />
                             </div>
-                            <h3 className="text-2xl font-bold text-white">This Is <span className="underline decoration-red-500 underline-offset-4">NOT</span> For:</h3>
+                            <h3 className="text-2xl font-bold text-white">
+                                This Is <span className="relative inline-block px-1">
+                                    NOT
+                                    <svg className="absolute -bottom-2 left-0 w-full h-2" viewBox="0 0 100 20" preserveAspectRatio="none">
+                                        <motion.path
+                                            d="M 0 10 Q 50 20 100 10"
+                                            fill="transparent"
+                                            stroke="#ef4444"
+                                            strokeWidth="6"
+                                            strokeLinecap="round"
+                                            initial={{ pathLength: 0 }}
+                                            whileInView={{ pathLength: 1 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+                                        />
+                                    </svg>
+                                </span> For:
+                            </h3>
                         </div>
                         <div className="space-y-4">
                             {[

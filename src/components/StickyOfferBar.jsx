@@ -125,7 +125,10 @@ function StickyOfferBar() {
                   <div className="flex items-center bg-red-500/20 px-2 py-0.5 rounded border border-red-500/30">
                     <span className="text-red-500 text-sm font-mono font-bold">{timeLeft}</span>
                   </div>
-                  <span className="text-white/30 line-through font-semibold text-xs ml-4">₹8,999</span>
+                  <div className="relative inline-flex items-center ml-4">
+                    <span className="text-white/90 font-semibold text-xs transition-opacity">₹8,999</span>
+                    <div className="absolute top-1/2 left-[-10%] w-[120%] h-[1.5px] bg-red-500 -rotate-3 origin-center opacity-90 shadow-[0_0_5px_rgba(239,68,68,0.5)]" />
+                  </div>
                   <span className="text-2xl font-black text-white italic">₹399/-</span>
                 </div>
               </>
@@ -175,7 +178,10 @@ function StickyOfferBar() {
                   <div className="flex items-center bg-red-500/20 px-3 py-1 rounded-lg border border-red-500/30">
                     <span className="text-red-500 text-2xl font-mono font-black">{timeLeft}</span>
                   </div>
-                  <span className="text-white/20 line-through font-bold text-lg ml-6">₹8,999</span>
+                  <div className="relative inline-flex items-center ml-6">
+                    <span className="text-white/90 font-bold text-lg">₹8,999</span>
+                    <div className="absolute top-1/2 left-[-10%] w-[120%] h-[2px] bg-red-500 -rotate-3 origin-center opacity-90 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
+                  </div>
                   <span className="text-4xl font-black text-white italic tracking-tighter">₹399/-</span>
                 </div>
               </>

@@ -55,14 +55,13 @@ const ProblemAwareness = () => {
                             key={idx}
                             initial={{
                                 opacity: 0,
-                                x: typeof window !== 'undefined' && window.innerWidth < 768 ? (idx % 2 === 0 ? -50 : 50) : 0,
-                                y: typeof window !== 'undefined' && window.innerWidth >= 768 ? 30 : 0
+                                y: 30
                             }}
-                            whileInView={{ opacity: 1, x: 0, y: 0 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{
                                 duration: 0.6,
-                                delay: typeof window !== 'undefined' && window.innerWidth >= 768 ? idx * 0.1 : 0.1
+                                delay: idx * 0.1
                             }}
                             className="bg-white/5 hover:bg-white/10 p-6 rounded-2xl border border-white/10 transition-all hover:scale-[1.02] group flex items-start gap-4"
                         >

@@ -1,4 +1,4 @@
-import React from 'react'
+import { motion } from 'framer-motion'
 import { Gift, FileText, Video, AlertTriangle } from 'lucide-react'
 
 const Deliverables = () => {
@@ -46,7 +46,7 @@ const Deliverables = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                        What You Get Instantly
+                        What You <span className="text-blue-400">Get</span> Instantly
                     </h2>
                     <p className="text-lg md:text-xl text-gray-400">
                         Everything is delivered to your email immediately after payment.
@@ -63,9 +63,15 @@ const Deliverables = () => {
                                 <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                                 <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.desc}</p>
 
-                                <span className={`absolute bottom-4 right-4 px-2 py-1 rounded text-[10px] font-bold border uppercase tracking-wider ${item.badgeColor}`}>
+                                <motion.span
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 + (idx * 0.1) }}
+                                    className={`absolute bottom-4 right-4 px-2 py-1 rounded text-[10px] font-bold border uppercase tracking-wider ${item.badgeColor}`}
+                                >
                                     {item.badge}
-                                </span>
+                                </motion.span>
                             </div>
                         </div>
                     ))}

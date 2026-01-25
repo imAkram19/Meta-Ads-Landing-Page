@@ -82,20 +82,20 @@ const MetaHero = () => {
                 </motion.div>
 
                 {/* Mobile Side Badges (Stacked or adjusted) */}
-                <div className="md:hidden absolute top-[55%] w-full flex justify-between px-8 z-40">
+                <div className="md:hidden absolute top-[55%] w-full flex justify-between px-6 z-40">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.5, x: -30 }}
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1.2 }}
-                        className="bg-gradient-to-r from-cyan-600/90 to-blue-600/90 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg shadow-lg border border-white/10 uppercase tracking-wide -rotate-2"
+                        className="bg-gradient-to-r from-cyan-600/90 to-blue-600/90 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg shadow-lg border border-white/10 uppercase tracking-wide -rotate-6"
                     >
-                        No Experience
+                        No Experience Needed
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.5, x: 30 }}
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1.3 }}
-                        className="bg-gradient-to-l from-blue-600/90 to-indigo-700/90 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg shadow-lg border border-white/10 uppercase tracking-wide rotate-2"
+                        className="bg-gradient-to-l from-blue-600/90 to-indigo-700/90 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg shadow-lg border border-white/10 uppercase tracking-wide rotate-6"
                     >
                         2026 Updated
                     </motion.div>
@@ -148,10 +148,10 @@ const MetaHero = () => {
                         ].map((text, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.1 * i + 0.4 }}
+                                transition={{ delay: 0.4 }}
                                 className="flex items-start gap-3 text-gray-200"
                             >
                                 <div className="min-w-[20px] mt-1">
@@ -165,10 +165,10 @@ const MetaHero = () => {
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 1.2 }}
-                            className="mt-2 pt-4 border-t border-white/10 flex items-center justify-center font-medium text-lg md:text-xl"
+                            transition={{ delay: 0.6 }}
+                            className="mt-2 pt-6 border-t border-white/10 flex items-center justify-center"
                         >
-                            <p className="text-xl text-blue-200 font-medium italic">
+                            <p className="text-xl md:text-2xl text-blue-200 font-medium italic text-center">
                                 "This guide is made exactly for you."
                             </p>
                         </motion.div>

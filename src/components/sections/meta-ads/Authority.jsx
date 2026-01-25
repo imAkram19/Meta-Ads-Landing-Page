@@ -81,19 +81,19 @@ const Authority = () => {
                     >
                         Testimonials
                     </motion.h3>
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="flex justify-center gap-1 text-yellow-400 mb-2"
-                    >
-                        <Star fill="currentColor" size={20} />
-                        <Star fill="currentColor" size={20} />
-                        <Star fill="currentColor" size={20} />
-                        <Star fill="currentColor" size={20} />
-                        <Star fill="currentColor" size={20} />
-                    </motion.div>
+                    <div className="flex justify-center gap-1 text-yellow-400 mb-2">
+                        {[1, 2, 3, 4, 5].map((_, k) => (
+                            <motion.div
+                                key={k}
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 + (k * 0.1), type: "spring", stiffness: 260, damping: 20 }}
+                            >
+                                <Star fill="currentColor" size={20} />
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -103,20 +103,28 @@ const Authority = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
+                            transition={{ delay: i * 0.05 }}
                             className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors"
                         >
                             <div className="flex gap-1 text-yellow-500 mb-4">
                                 {Array(t.rating).fill(0).map((_, k) => (
-                                    <Star key={k} fill="currentColor" size={16} />
+                                    <motion.div
+                                        key={k}
+                                        initial={{ opacity: 0, scale: 0 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: (i * 0.05) + (k * 0.1), type: "spring", stiffness: 260, damping: 20 }}
+                                    >
+                                        <Star fill="currentColor" size={16} />
+                                    </motion.div>
                                 ))}
                             </div>
                             <p className="text-gray-300 mb-6 text-sm leading-relaxed">"{t.text}"</p>
-                            <div className="flex items-center gap-3 mt-auto">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-gray-700 to-gray-600 flex items-center justify-center text-xs font-bold text-white">
+                            <div className="flex flex-row-reverse items-center gap-3 mt-auto text-right">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-gray-700 to-gray-600 flex items-center justify-center text-xs font-bold text-white shrink-0">
                                     {t.name.split(' ').map(n => n[0]).join('')}
                                 </div>
-                                <div className="text-left">
+                                <div>
                                     <p className="text-white font-semibold text-sm">{t.name}</p>
                                     <p className="text-gray-500 text-xs">{t.role}</p>
                                 </div>

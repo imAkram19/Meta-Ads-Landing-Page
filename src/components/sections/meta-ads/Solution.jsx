@@ -34,20 +34,22 @@ const Solution = () => {
                             { title: "Why to do it", desc: "Understand the logic" },
                             { title: "How to do it", desc: "Click-by-click demos" }
                         ].map((item, i) => (
-                            <motion.div
+                            <div
                                 key={i}
-                                initial={{ opacity: 0, scale: 0.5 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 * i + 0.3 }}
                                 className="bg-white/5 rounded-xl p-6 border border-white/5 text-center hover:bg-white/10 transition-colors"
                             >
-                                <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 text-green-400">
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.5 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 * i + 0.3 }}
+                                    className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 text-green-400"
+                                >
                                     <CheckCircle2 size={24} />
-                                </div>
+                                </motion.div>
                                 <h3 className="text-white font-bold text-xl mb-1">{item.title}</h3>
                                 <p className="text-gray-400 text-sm">{item.desc}</p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
 

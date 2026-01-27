@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Zap, CheckCircle2 } from 'lucide-react'
 import heroPerson from '../../../assets/hero-person.png'
+import videoThumbnail from '../../../assets/meta ads banner.jpg.jpeg'
 import courseVideo from '../../../assets/web video.mp4'
 
 const MetaHero = () => {
@@ -185,7 +186,7 @@ const MetaHero = () => {
                             controls
                             playsInline
                             className="absolute inset-0 w-full h-full object-cover rounded-2xl"
-                            poster={heroPerson} // Using heroPerson as a temporary poster if needed, or omit
+                            poster={videoThumbnail} // Using the new banner as the poster
                         >
                             Your browser does not support the video tag.
                         </video>
@@ -200,14 +201,14 @@ const MetaHero = () => {
                     transition={{ delay: 0.2 }}
                     className="w-full text-center px-4 mb-8 md:mb-12 relative z-30"
                 >
-                    <Link to="/welcome">
+                    <a href={import.meta.env.VITE_RAZORPAY_PAYMENT_LINK} target="_blank" rel="noopener noreferrer">
                         <button
                             className="w-full max-w-md md:max-w-xl py-4 md:py-6 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white rounded-full font-black uppercase tracking-widest shadow-[0_20px_50px_rgba(37,99,235,0.4)] ring-4 ring-white/10 hover:ring-white/20 transition-all transform hover:scale-[1.02] active:scale-95"
                         >
                             <span className="block text-xl md:text-3xl mb-1">Buy Now - ₹399</span>
                             <span className="block text-xs md:text-sm font-medium text-blue-200 opacity-90">Limited Time Offer • Instant Access</span>
                         </button>
-                    </Link>
+                    </a>
                 </motion.div>
             </div>
         </section>

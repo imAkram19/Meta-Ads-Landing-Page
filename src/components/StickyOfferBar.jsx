@@ -148,8 +148,10 @@ function StickyOfferBar() {
             className={`bg-[#ff4d4d] hover:bg-[#ff3333] text-white font-bold px-4 py-2 text-xs uppercase tracking-tighter whitespace-nowrap shadow-lg shadow-red-500/20 border-b-2 border-red-700 active:border-b-0 active:translate-y-[1px] transition-all ${shouldJerk ? 'animate-random-jerk' : ''}`}
             asChild
           >
-            <Link
-              to="/welcome"
+            <a
+              href={import.meta.env.VITE_RAZORPAY_PAYMENT_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5"
               onClick={() => {
                 if (typeof fbq !== 'undefined') {
@@ -158,7 +160,7 @@ function StickyOfferBar() {
               }}
             >
               <span>Buy Now</span>
-            </Link>
+            </a>
           </Button>
         </div>
       </div>
@@ -199,8 +201,10 @@ function StickyOfferBar() {
             className={`bg-[#ff4d4d] hover:bg-[#ff3333] text-white font-black px-6 py-5 text-base uppercase italic tracking-tighter whitespace-nowrap shadow-2xl shadow-red-500/40 border-b-4 border-red-700 active:border-b-0 active:translate-y-[2px] transition-all group ${shouldJerk ? 'animate-random-jerk' : ''}`}
             asChild
           >
-            <Link
-              to="/welcome"
+            <a
+              href={import.meta.env.VITE_RAZORPAY_PAYMENT_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2"
               onClick={() => {
                 if (typeof fbq !== 'undefined') {
@@ -210,7 +214,7 @@ function StickyOfferBar() {
             >
               <span>Buy Now</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
+            </a>
           </Button>
         </div>
       </div>

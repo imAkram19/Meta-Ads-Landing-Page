@@ -85,7 +85,7 @@ const ExclusiveBonuses = () => {
     ]
 
     return (
-        <section className="pt-12 md:pt-24 pb-8 md:pb-16 relative overflow-hidden">
+        <section className="pt-8 md:pt-12 pb-4 md:pb-8 relative overflow-hidden">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="text-center mb-16">
                     <motion.div
@@ -122,7 +122,7 @@ const ExclusiveBonuses = () => {
                                 initial={{ opacity: 0, scale: 0 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
+                                transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1.0 }}
                                 className="absolute top-0 right-0 px-4 py-1 bg-yellow-500/20 text-yellow-300 text-xs font-bold uppercase tracking-wider rounded-bl-xl border-l border-b border-yellow-500/20"
                             >
                                 {bonus.title}

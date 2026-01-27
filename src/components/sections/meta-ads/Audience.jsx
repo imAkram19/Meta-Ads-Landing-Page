@@ -32,7 +32,7 @@ const Audience = () => {
                                             initial={{ pathLength: 0 }}
                                             whileInView={{ pathLength: 1 }}
                                             viewport={{ once: true }}
-                                            transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+                                            transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
                                         />
                                     </svg>
                                 </span> For:
@@ -85,7 +85,7 @@ const Audience = () => {
                                             initial={{ pathLength: 0 }}
                                             whileInView={{ pathLength: 1 }}
                                             viewport={{ once: true }}
-                                            transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+                                            transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
                                         />
                                     </svg>
                                 </span> For:

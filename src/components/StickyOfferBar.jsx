@@ -164,9 +164,9 @@ function StickyOfferBar() {
       </div>
 
       {/* Desktop Version */}
-      <div className={`md:flex hidden fixed bottom-6 right-6 z-[100] w-[450px] backdrop-blur-2xl bg-white/5 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] rounded-3xl transition-all duration-700 ease-out ${!isVisible ? 'translate-x-[120%] opacity-0' : shouldAnimate ? 'translate-x-0 opacity-100' : 'translate-x-[120%] opacity-0'} ${shouldPulse ? 'animate-scale-pulse' : ''}`}>
+      <div className={`md:flex hidden fixed bottom-6 right-6 z-[100] w-[520px] max-w-[calc(100vw-3rem)] backdrop-blur-2xl bg-white/5 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] rounded-3xl transition-all duration-700 ease-out ${!isVisible ? 'translate-x-[120%] opacity-0' : shouldAnimate ? 'translate-x-0 opacity-100' : 'translate-x-[120%] opacity-0'} ${shouldPulse ? 'animate-scale-pulse' : ''}`}>
         <div className="absolute inset-0 bg-gradient-to-br from-white/15 to-transparent rounded-3xl pointer-events-none" />
-        <div className="flex items-center justify-between px-6 py-4 gap-6 relative z-10 w-full">
+        <div className="flex items-center justify-between px-6 py-4 gap-4 relative z-10 w-full">
           <div className="flex flex-col">
             {!timerEnded ? (
               <>
@@ -177,11 +177,11 @@ function StickyOfferBar() {
                   <div className="flex items-center bg-red-500/20 px-3 py-1 rounded-lg border border-red-500/30">
                     <span className="text-red-500 text-2xl font-mono font-black">{timeLeft}</span>
                   </div>
-                  <div className="relative inline-flex items-center ml-6">
-                    <span className="text-white/90 font-bold text-lg">₹8,999</span>
+                  <div className="relative inline-flex items-center ml-4">
+                    <span className="text-white/90 font-bold text-base">₹8,999</span>
                     <div className="absolute top-1/2 left-[-10%] w-[120%] h-[2px] bg-red-500 -rotate-3 origin-center opacity-90 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
                   </div>
-                  <span className="text-4xl font-black text-white italic tracking-tighter">₹399/-</span>
+                  <span className="text-3xl font-black text-white italic tracking-tighter">₹399/-</span>
                 </div>
               </>
             ) : (
@@ -196,7 +196,7 @@ function StickyOfferBar() {
 
           <Button
             size="lg"
-            className={`bg-[#ff4d4d] hover:bg-[#ff3333] text-white font-black px-8 py-6 text-lg uppercase italic tracking-tighter whitespace-nowrap shadow-2xl shadow-red-500/40 border-b-4 border-red-700 active:border-b-0 active:translate-y-[2px] transition-all group ${shouldJerk ? 'animate-random-jerk' : ''}`}
+            className={`bg-[#ff4d4d] hover:bg-[#ff3333] text-white font-black px-6 py-5 text-base uppercase italic tracking-tighter whitespace-nowrap shadow-2xl shadow-red-500/40 border-b-4 border-red-700 active:border-b-0 active:translate-y-[2px] transition-all group ${shouldJerk ? 'animate-random-jerk' : ''}`}
             asChild
           >
             <Link

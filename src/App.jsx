@@ -7,6 +7,7 @@ import ProblemAwareness from './components/sections/meta-ads/ProblemAwareness'
 import Solution from './components/sections/meta-ads/Solution'
 import Curriculum from './components/sections/meta-ads/Curriculum'
 import Deliverables from './components/sections/meta-ads/Deliverables'
+import ExclusiveBonuses from './components/sections/meta-ads/ExclusiveBonuses'
 import Audience from './components/sections/meta-ads/Audience'
 import Authority from './components/sections/meta-ads/Authority'
 import FAQ from './components/sections/meta-ads/FAQ'
@@ -33,6 +34,9 @@ const LandingPage = ({ backgroundRef }) => {
 
       {/* Deliverables Section */}
       <Deliverables />
+
+      {/* Exclusive Bonuses Section */}
+      <ExclusiveBonuses />
 
       {/* Audience Section */}
       <Audience />

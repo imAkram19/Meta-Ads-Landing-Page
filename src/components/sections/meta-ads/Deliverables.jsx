@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
-import { Gift, FileText, Video, AlertTriangle } from 'lucide-react'
+import { Gift, FileText, Video, AlertTriangle, Sparkles } from 'lucide-react'
 
 const Deliverables = () => {
     const items = [
         {
-            title: "Meta Ads Starter Guide",
+            title: "Full Meta ads 2026 guide",
             desc: "2026 Updated PDF Edition",
             icon: FileText,
             iconBg: "bg-blue-600",
@@ -13,7 +13,7 @@ const Deliverables = () => {
             badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/20"
         },
         {
-            title: "Video Walkthrough",
+            title: "Video walkthrough",
             desc: "Step-by-step guide on how to use it correctly.",
             icon: Video,
             iconBg: "bg-purple-600/20",
@@ -22,8 +22,8 @@ const Deliverables = () => {
             badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/20"
         },
         {
-            title: "Beginner Checklist",
-            desc: "Tick off items as you set up your first ad.",
+            title: "Access to all free bonuses",
+            desc: "Unlock all exclusive resources instantly.",
             icon: Gift,
             iconBg: "bg-green-600/20",
             iconColor: "text-green-400",
@@ -31,18 +31,27 @@ const Deliverables = () => {
             badgeColor: "bg-green-500/10 text-green-400 border-green-500/20"
         },
         {
-            title: "Common Mistakes PDF",
-            desc: "List of things that waste your budget.",
+            title: "Useful AI prompts pack",
+            desc: "Smart prompts to accelerate your ad creation.",
+            icon: Sparkles,
+            iconBg: "bg-pink-600/20",
+            iconColor: "text-pink-400",
+            badge: "AI POWER",
+            badgeColor: "bg-pink-500/10 text-pink-400 border-pink-500/20"
+        },
+        {
+            title: "Common Mistakes: What to do & not to do",
+            desc: "Avoid the most common pitfalls in ad campaigns.",
             icon: AlertTriangle,
             iconBg: "bg-yellow-600/20",
             iconColor: "text-yellow-400",
-            badge: "BONUS",
-            badgeColor: "bg-green-500/10 text-green-400 border-green-500/20"
+            badge: "ESSENTIAL",
+            badgeColor: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
         }
     ]
 
     return (
-        <section className="pt-8 md:pt-24 pb-24 relative overflow-hidden">
+        <section className="pt-8 md:pt-24 pb-8 md:pb-12 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">

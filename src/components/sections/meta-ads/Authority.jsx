@@ -79,7 +79,7 @@ const Authority = () => {
                         viewport={{ once: true }}
                         className="text-3xl md:text-4xl font-bold text-white mb-4"
                     >
-                        Testimonials
+                        What people say about this
                     </motion.h3>
                     <div className="flex justify-center gap-1 text-yellow-400 mb-2">
                         {[1, 2, 3, 4, 5].map((_, k) => (

@@ -290,7 +290,7 @@ const SuccessPage = () => {
                             <Loader2 className="animate-spin" />
                         ) : (
                             <>
-                                Claim My Copy
+                                Get My Guide
                                 <Check size={20} className="group-hover:scale-125 transition-transform" />
                             </>
                         )}

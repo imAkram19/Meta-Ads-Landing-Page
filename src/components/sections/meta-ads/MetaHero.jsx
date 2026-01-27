@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Zap, CheckCircle2 } from 'lucide-react'
 import heroPerson from '../../../assets/hero-person.png'
 import courseVideo from '../../../assets/web video.mp4'
@@ -119,7 +120,7 @@ const MetaHero = () => {
             </div>
 
             {/* Pain Points Section (Moved below logic) */}
-            <div className="relative z-10 w-full max-w-5xl mx-auto px-4 mt-8 md:mt-12 mb-4 md:mb-20">
+            <div className="relative z-10 w-full max-w-5xl mx-auto px-4 mt-8 md:mt-12 mb-4 md:mb-12">
                 {/* This content can remain as "Below the fold" info */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -177,8 +178,8 @@ const MetaHero = () => {
                 </motion.div>
 
                 {/* Course Video */}
-                <div className="w-full max-w-[500px] mx-auto mb-0 md:mb-12 relative shadow-2xl overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-                    <div className="aspect-[1080/1350] w-full relative">
+                <div className="w-full max-w-5xl mx-auto mb-0 md:mb-12 relative shadow-2xl overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+                    <div className="aspect-video w-full relative">
                         <video
                             src={courseVideo}
                             controls
@@ -190,6 +191,24 @@ const MetaHero = () => {
                         </video>
                     </div>
                 </div>
+
+                {/* CTA Below Video */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="w-full text-center px-4 mb-8 md:mb-12 relative z-30"
+                >
+                    <Link to="/welcome">
+                        <button
+                            className="w-full max-w-md md:max-w-xl py-4 md:py-6 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white rounded-full font-black uppercase tracking-widest shadow-[0_20px_50px_rgba(37,99,235,0.4)] ring-4 ring-white/10 hover:ring-white/20 transition-all transform hover:scale-[1.02] active:scale-95"
+                        >
+                            <span className="block text-xl md:text-3xl mb-1">Buy Now - ₹399</span>
+                            <span className="block text-xs md:text-sm font-medium text-blue-200 opacity-90">Limited Time Offer • Instant Access</span>
+                        </button>
+                    </Link>
+                </motion.div>
             </div>
         </section>
     )

@@ -27,7 +27,7 @@ const ProblemAwareness = () => {
     ]
 
     return (
-        <section className="pt-12 md:pt-24 pb-8 md:pb-24 relative overflow-hidden">
+        <section className="pt-8 md:pt-12 pb-8 md:pb-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-10 md:mb-16">
                     <motion.h2

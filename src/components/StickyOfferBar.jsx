@@ -150,8 +150,6 @@ function StickyOfferBar() {
           >
             <a
               href={import.meta.env.VITE_RAZORPAY_PAYMENT_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
               className="flex items-center gap-1.5"
               onClick={() => {
                 if (typeof fbq !== 'undefined') {
@@ -203,8 +201,6 @@ function StickyOfferBar() {
           >
             <a
               href={import.meta.env.VITE_RAZORPAY_PAYMENT_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
               className="flex items-center gap-2"
               onClick={() => {
                 if (typeof fbq !== 'undefined') {

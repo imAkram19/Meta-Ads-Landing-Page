@@ -1,14 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Star, ShieldCheck, Target, CheckCircle2 } from 'lucide-react'
+import WhyLearnFromMeImg from '../../../assets/Why Learn From Me.png'
 
 const Authority = () => {
-    const reasons = [
-        "I work with Meta Ads professionally every day.",
-        "I understand beginner problems clearly.",
-        "I’ve seen what works and what fails.",
-        "This guide is built from real experience."
-    ]
 
     const testimonials = [
         { name: "Mohammed Shoaib", role: "Small Business Owner", text: "I was wasting money on 'Boost Post'. This guide showed me how to use Ads Manager properly. Finally getting qualified leads.", rating: 5 },
@@ -24,60 +19,40 @@ const Authority = () => {
         <section className="pt-4 md:pt-16 pb-12 md:pb-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Author / Trust Section */}
-                <div className="max-w-4xl mx-auto mb-16 px-4">
+                <div className="max-w-4xl mx-auto -mb-6 md:mb-8 px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex items-center justify-center gap-3 mb-8 text-center"
+                        className="flex items-center justify-center gap-3 mb-0 md:mb-8 text-center"
                     >
                         <div className="p-2 rounded-full bg-blue-500/10 text-blue-400 shrink-0">
                             <ShieldCheck size={28} className="md:w-10 md:h-10" />
                         </div>
                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white whitespace-nowrap">Why Learn From Me?</h2>
                     </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="bg-white/5 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl relative max-w-2xl mx-auto group"
-                    >
-                        {/* Top Highlight Border */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-
-                        <div className="grid grid-cols-1 gap-4 md:gap-5 text-left">
-                            {reasons.map((text, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: 0.2 + (i * 0.1) }}
-                                    className="flex items-start gap-3"
-                                >
-                                    <CheckCircle2 size={18} className="text-blue-400 shrink-0 mt-1 md:w-6 md:h-6" />
-                                    <p className="text-gray-200 text-base md:text-xl font-medium">{text}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-
-                        <div className="mt-6 pt-6 md:mt-8 md:pt-8 border-t border-white/10 text-center">
-                            <p className="text-base md:text-xl text-blue-300 italic font-medium">
-                                "This is the guide I wish I had when I started."
-                            </p>
-                        </div>
-                    </motion.div>
                 </div>
+            </div>
+
+            {/* Full Width Image Section */}
+            <div className="w-full -mb-6 md:mb-16 relative">
+                <img
+                    src={WhyLearnFromMeImg}
+                    alt="Why Learn From Me"
+                    className="w-full h-auto object-cover shadow-2xl"
+                    loading="eager"
+                />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Testimonials */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-6 md:mb-12">
                     <motion.h3
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-4xl font-bold text-white mb-4"
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 md:mb-4 whitespace-nowrap mt-8 md:mt-0"
                     >
                         What people say about this
                     </motion.h3>

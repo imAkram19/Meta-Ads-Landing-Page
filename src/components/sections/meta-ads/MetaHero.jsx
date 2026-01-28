@@ -59,7 +59,7 @@ const MetaHero = () => {
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                     className="relative md:absolute md:bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 w-[60%] md:w-auto h-auto md:h-[75%] lg:h-[80%] z-20 flex items-end justify-center pointer-events-none mt-[-30%] md:mt-0 mx-auto"
                 >
-                    <img src={heroPerson} alt="Meta Ads Expert" className="w-full md:w-auto h-auto md:h-full object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]" />
+                    <img src={heroPerson} alt="Meta Ads Expert" className="w-full md:w-auto h-auto md:h-full object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]" fetchPriority="high" loading="eager" />
                 </motion.div>
 
                 {/* Side Badges - Desktop Only / Tablet */}

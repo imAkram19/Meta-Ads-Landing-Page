@@ -10,23 +10,8 @@ const SuccessPage = () => {
     const location = useLocation()
 
     // Protection Logic
-    useEffect(() => {
-        const params = new URLSearchParams(location.search)
-        const paymentId = params.get('razorpay_payment_id') || params.get('payment_id')
-
-        // Allow access if payment ID exists OR if on localhost (for testing)
-        // Otherwise, redirect to home
-        // if (!paymentId && window.location.hostname !== 'localhost') {
-        //     navigate('/')
-        // }
-    }, [navigate, location])
-
     return (
         <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center bg-black">
-            {/* DEBUG SECTION - REMOVE AFTER FIXING */}
-            <div className="fixed top-0 left-0 w-full bg-red-900/50 text-white text-xs p-2 z-50 break-all text-center">
-                DEBUG MODE: Params received: {location.search || 'None'}
-            </div>
             <div className="relative mb-12">
                 <motion.div
                     initial={{ scale: 0 }}

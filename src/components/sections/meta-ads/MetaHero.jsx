@@ -212,7 +212,7 @@ const MetaHero = () => {
                                     <span className="text-blue-200/80 text-sm md:text-xl font-medium">₹8,999</span>
                                     <div className="absolute top-1/2 left-[-10%] w-[120%] h-[1.5px] bg-red-500 -rotate-3 origin-center opacity-90 shadow-[0_0_5px_rgba(239,68,68,0.5)]" />
                                 </div>
-                                <span>₹399</span>
+                                <span>₹149</span>
                             </span>
                             <span className="block text-[10px] md:text-sm font-medium text-blue-200 opacity-90">Limited Time Offer • Instant Access</span>
                         </button>

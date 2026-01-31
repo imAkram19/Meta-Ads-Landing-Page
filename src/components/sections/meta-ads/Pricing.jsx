@@ -15,7 +15,7 @@ const Pricing = () => {
                             Real Value: ₹2,999
                         </div>
                         <div className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-white">
-                            ₹399
+                            ₹149
                         </div>
                     </div>
 

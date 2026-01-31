@@ -7,7 +7,7 @@ const Authority = () => {
 
     const testimonials = [
         { name: "Mohammed Shoaib", role: "Small Business Owner", text: "I was wasting money on 'Boost Post'. This guide showed me how to use Ads Manager properly. Finally getting qualified leads.", rating: 5 },
-        { name: "Rajesh Reddy", role: "Freelancer", text: "Simple, direct, and no nonsense. The campaign structure part alone is worth more than updated ₹399.", rating: 5 },
+        { name: "Rajesh Reddy", role: "Freelancer", text: "Simple, direct, and no nonsense. The campaign structure part alone is worth more than updated ₹149.", rating: 5 },
         { name: "Ayesha Siddiqui", role: "Student", text: "I was scared of the interface. This guide made it look so easy. Perfect for beginners who have zero knowledge.", rating: 5 },
         { name: "Karthik Rao", role: "Real Estate Agent", text: "Wasted 5k on Facebook ads before finding this. Now I know exactly what budget to set and who to target.", rating: 5 },
         { name: "Sameer Khan", role: "Clothing Brand Owner", text: "Better than expensive courses. Shawaiz explains concepts very clearly in the video.", rating: 5 },

@@ -130,7 +130,7 @@ function StickyOfferBar() {
                     <span className="text-white/90 font-semibold text-xs transition-opacity">₹8,999</span>
                     <div className="absolute top-1/2 left-[-10%] w-[120%] h-[1.5px] bg-red-500 -rotate-3 origin-center opacity-90 shadow-[0_0_5px_rgba(239,68,68,0.5)]" />
                   </div>
-                  <span className="text-2xl font-black text-white italic">₹399/-</span>
+                  <span className="text-2xl font-black text-white italic">₹149/-</span>
                 </div>
               </>
             ) : (
@@ -181,7 +181,7 @@ function StickyOfferBar() {
                     <span className="text-white/90 font-bold text-base">₹8,999</span>
                     <div className="absolute top-1/2 left-[-10%] w-[120%] h-[2px] bg-red-500 -rotate-3 origin-center opacity-90 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
                   </div>
-                  <span className="text-3xl font-black text-white italic tracking-tighter">₹399/-</span>
+                  <span className="text-3xl font-black text-white italic tracking-tighter">₹149/-</span>
                 </div>
               </>
             ) : (
